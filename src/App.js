@@ -33,13 +33,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <label>
-          Filtrar por nome:
+        <form>
+          <label>
+            Filtrar por nome:
           <input
-            type="text"
-            onChange={this.onChange}
-          />
-        </label>
+              type="text"
+              onChange={this.onChange}
+            />
+            <button type="submit" onSubmit={() => console.log("lista completa")} >Lista Completa</button>
+          </label>
+        </form>
         <h1
           style={{
             color: "tomato",

@@ -12,3 +12,7 @@ ul li {
   padding: 20px;
   text-align: center;
 }
+
+input {
+  margin: 1rem;
+}
