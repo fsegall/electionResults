@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-import "./App.css";
-import Eleicao from "./dadosPresidente.json";
-
-localStorage.setItem("eleicao", JSON.stringify(Eleicao.cand));
+import React, { Component } from 'react';
+import './App.css';
+import './setLocalStorage';
+import Candidato from './candidato.js';
 
 // How to sort an array of objects by numerical value
 const itensEleitos = JSON.parse(localStorage.getItem("eleicao")).sort(function (
@@ -12,35 +11,6 @@ const itensEleitos = JSON.parse(localStorage.getItem("eleicao")).sort(function (
   return obj1.seq - obj2.seq;
 });
 
-class Candidato extends Component {
-  render() {
-
-    const items = this.props.itens.map(eleito => {
-      const classEleito =
-        eleito.e === "s"
-          ? "list-group-item list-group-item-action list-group-item-primary"
-          : "list-group-item list-group-item-action list-group-item-danger";
-
-      return (
-
-        <li className={classEleito} key={eleito.sqcand}>
-          {eleito.e === "s"
-            ? `O candidato ${eleito.nm} foi eleito com ${
-            eleito.v
-            } votos e ficou em ${eleito.seq}º lugar.`
-            : `O candidato ${eleito.nm} não foi eleito com ${
-            eleito.v
-            } votos e ficou em ${eleito.seq}º lugar.`}
-        </li>
-
-      )
-    });
-
-    return items
-
-  }
-
-}
 
 class App extends Component {
   constructor(props) {
