@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   onChange = (e) => {
-    let updatedList = this.state.itensEleitos.filter(item => item.nm.toLowerCase().search(e.target.value.toLowerCase()) !== -1
+    let updatedList = itensEleitos.filter(item => item.nm.toLowerCase().search(e.target.value.toLowerCase()) !== -1
     )
 
     this.setState({

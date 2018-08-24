@@ -13,6 +13,12 @@ ul li {
   text-align: center;
 }
 
+
 input {
   margin: 1rem;
+}
+
+label {
+  color: gray;
+  font-weight: bold;
 }
